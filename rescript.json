@@ -1,0 +1,31 @@
+{
+  "name": "rescript-relay-starter",
+  "uncurried": true,
+  "jsx": {
+    "version": 4,
+    "mode": "automatic"
+  },
+  "version": "1.0.0",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": true
+    }
+  ],
+  "suffix": ".mjs",
+  "ppx-flags": [["rescript-relay/ppx", "-uncurried"]],
+  "bs-dependencies": [
+    "@rescript/react",
+    "rescript-relay",
+    "rescript-relay-router",
+    "@rescript/core",
+    "@glennsl/rescript-fetch"
+  ],
+  "bsc-flags": ["-open RescriptCore"]
+}

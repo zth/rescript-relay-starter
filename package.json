@@ -1,0 +1,45 @@
+{
+  "name": "rescript-relay-starter",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:relay && npm run router:generate && npm run build:rescript && npm run build:vite",
+    "build:relay": "rescript-relay-compiler",
+    "build:rescript": "rescript build -with-deps",
+    "build:vite": "vite build --outDir dist/client",
+    "preview": "cross-env ENABLE_FILESERVER=true yarn start",
+    "router:generate": "rescript-relay-router generate",
+    "dev": "concurrently 'npm:dev:*'",
+    "dev:vite": "vite",
+    "dev:relay": "rescript-relay-compiler --watch",
+    "dev:rescript": "rescript build -w",
+    "schema": "npx -y get-graphql-schema http://localhost:4000/graphql > schema.graphql",
+    "setup": "npm run build:relay && npm run router:generate && npm run build:rescript",
+    "postinstall": "npm run setup"
+  },
+  "devDependencies": {
+    "@glennsl/rescript-fetch": "^0.2.0",
+    "@rescript/core": "^0.5.0",
+    "@rescript/react": "0.12.0-alpha.2",
+    "@vitejs/plugin-react": "4.1.1",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "graphql": "16.2.0",
+    "postcss": "^8.4.31",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-relay": "16.0.0",
+    "relay-runtime": "16.0.0",
+    "rescript": "11.0.0-rc.5",
+    "rescript-relay": "3.0.0-alpha.2",
+    "rescript-relay-router": "^1.0.4",
+    "rollup-plugin-visualizer": "5.9.2",
+    "tailwindcss": "^3.3.3",
+    "vite": "4.5.0",
+    "vite-plugin-html": "3.2.0"
+  },
+  "dependencies": {}
+}

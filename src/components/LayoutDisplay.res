@@ -1,0 +1,19 @@
+module QueryFragment = %relay(`
+  fragment LayoutDisplay_query on Query {
+    siteStatistics {
+      currentVisitorsOnline
+    }
+  }
+`)
+
+@react.component
+let make = (~query, ~children) => {
+  let query = QueryFragment.use(query)
+
+  <>
+    <div className="my-4">
+      {React.string(query.siteStatistics.currentVisitorsOnline->Int.toString)}
+    </div>
+    <div> {children} </div>
+  </>
+}

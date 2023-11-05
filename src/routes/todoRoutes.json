@@ -1,0 +1,13 @@
+[
+  {
+    "path": "todos?statuses=array<TodoStatus.t>",
+    "name": "Todos",
+    "children": [
+      {
+        "path": ":todoId?showMore=bool",
+        "name": "Single",
+        "children": []
+      }
+    ]
+  }
+]
