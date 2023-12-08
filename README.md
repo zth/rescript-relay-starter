@@ -9,6 +9,15 @@ A starter for RescriptRelay. Features:
 
 ## Get started
 
+This uses [`graphql-client-example-server`](https://github.com/zth/graphql-client-example-server) by default. So, install and start that first if you want to have a look at the demo code included in the repo:
+
+```bash
+npm install -g graphql-client-example-server
+
+# Then run it
+graphql-client-example-server
+```
+
 ```bash
 npm i
 
