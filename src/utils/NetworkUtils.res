@@ -14,7 +14,7 @@ let fetchQuery: RescriptRelay.Network.fetchFunctionPromise = async (
       body: Body.string(
         {"query": operation.text, "variables": variables}
         ->JSON.stringifyAny
-        ->Option.getWithDefault(""),
+        ->Option.getOr(""),
       ),
       credentials: #"same-origin",
     },
