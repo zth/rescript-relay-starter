@@ -64,7 +64,7 @@ let isRouteActive = (~exact: bool=false, {pathname}: RelayRouter.History.locatio
 @live
 let useIsRouteActive = (~exact=false) => {
   let location = RelayRouter.Utils.useLocation()
-  React.useMemo2(() => location->isRouteActive(~exact), (location, exact))
+  React.useMemo(() => location->isRouteActive(~exact), (location, exact))
 }
 @live
 type subRoute = [#Todos]
@@ -82,7 +82,7 @@ let getActiveSubRoute = (location: RelayRouter.History.location): option<[#Todos
 @live
 let useActiveSubRoute = (): option<[#Todos]> => {
   let location = RelayRouter.Utils.useLocation()
-  React.useMemo1(() => {
+  React.useMemo(() => {
     getActiveSubRoute(location)
   }, [location])
 }
